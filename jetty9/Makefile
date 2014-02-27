@@ -20,6 +20,6 @@ ${JETTY_NAME}: ${GZFILE}
 ${TARGET}: ${JETTY_NAME}
 	mkdir $@
 	cd $@ ;\
-	java -jar ${CWD}/${JETTY_NAME}/start.jar --add-to-start=http,deploy,jsp,logging,jmx-remote
+	java -jar ${CWD}/${JETTY_NAME}/start.jar --add-to-start=http,deploy,jsp,servlets,logging,jmx-remote
 	echo -e "#!/bin/sh\ni=1\njava -jar ${CWD}/${JETTY_NAME}/start.jar jetty.port=8\$${i}80 jetty.jmxrmiport=8\$${i}90" > $@/start.sh
 	chmod +x $@/start.sh
