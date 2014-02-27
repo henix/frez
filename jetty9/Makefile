@@ -21,7 +21,5 @@ ${TARGET}: ${JETTY_NAME}
 	mkdir $@
 	cd $@ ;\
 	java -jar ${CWD}/${JETTY_NAME}/start.jar --add-to-start=http,deploy,jsp,logging,jmx-remote
-
-${TARGET}/start.sh
-	echo -e "#!/bin/sh\ni=1\njava -jar ${CWD}/${JETTY_NAME}/start.jar jetty.port=8\$${i}80 jetty.jmxrmiport=8\$${i}90" > $@
-	chmod +x $@
+	echo -e "#!/bin/sh\ni=1\njava -jar ${CWD}/${JETTY_NAME}/start.jar jetty.port=8\$${i}80 jetty.jmxrmiport=8\$${i}90" > $@/start.sh
+	chmod +x $@/start.sh
