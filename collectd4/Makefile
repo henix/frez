@@ -22,8 +22,7 @@ $(COLLECTD_NAME): $(PKG_FILE)
 $(TARGET): $(COLLECTD_NAME)
 	cd $< ; \
 	make install
-	cp -f logfile.conf $@/etc/collectd.conf
-	printf 'Include "%s"\n' "$@/etc/collectd.d" >> $@/etc/collectd.conf
+	sed -e 's|\$$TARGET|$(TARGET)|g' collectd.conf > $@/etc/collectd.conf
 
 $(TARGET)/etc/collectd.d: $(TARGET)
 	mkdir $@
