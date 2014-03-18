@@ -7,6 +7,10 @@
       <param-name>mimeTypes</param-name>\
       <param-value>text/html,text/plain,text/xml,application/xhtml+xml,text/css,application/javascript,application/json,image/svg+xml</param-value>\
     </init-param>\
+    <init-param>\
+      <param-name>minGzipSize</param-name>\
+      <param-value>2048</param-value>\
+    </init-param>\
   </filter>\
   <filter-mapping>\
     <filter-name>GzipFilter</filter-name>\
