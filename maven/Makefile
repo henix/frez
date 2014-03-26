@@ -8,7 +8,7 @@ TARGET ?= $(HOME)/maven
 all: $(TARGET)
 
 $(PKG_FILE):
-	wget -c -O $(PKG_FILE) http://mirror.esocc.com/apache/maven/maven-3/$(MAVEN_VERSION)/binaries/$(PKG_FILE)
+	aria2c -s3 http://mirrors.ibiblio.org/apache/maven/maven-3/$(MAVEN_VERSION)/binaries/$(PKG_FILE) http://mirrors.hust.edu.cn/apache/maven/maven-3/$(MAVEN_VERSION)/binaries/$(PKG_FILE) http://mirror.bit.edu.cn/apache/maven/maven-3/$(MAVEN_VERSION)/binaries/$(PKG_FILE)
 	sha1sum -c $(PKG_FILE).sha1
 
 $(MAVEN_NAME): $(PKG_FILE)
