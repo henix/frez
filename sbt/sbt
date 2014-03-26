@@ -1,2 +1,2 @@
 #!/bin/sh
-java -XX:+UseG1GC -jar $(dirname $0)/sbt-launch.jar "$@"
+java -XX:+UseG1GC -Xmx1536m -jar $(dirname $0)/sbt-launch.jar "$@"
