@@ -5,6 +5,9 @@ sbt-launch.jar:
 	sha1sum -c $@.sha1
 
 install:
+	install -vd ~/bin/
+	install -v -m 775 sbt ~/bin/
+	install -v -m 664 sbt-launch.jar ~/bin/
 	install -vd ~/.sbt/0.13/plugins/
-	install -vc -b build.sbt ~/.sbt/0.13/build.sbt
-	install -vc -b plugins.sbt ~/.sbt/0.13/plugins/build.sbt
+	install -v -m 664 build.sbt ~/.sbt/0.13/build.sbt
+	install -v -m 664 plugins.sbt ~/.sbt/0.13/plugins/build.sbt
