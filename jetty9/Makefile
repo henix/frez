@@ -13,11 +13,9 @@ $(GZFILE):
 
 $(JETTY_NAME): $(GZFILE)
 	tar -xf $< --touch
-	sed -i -f jmx-remote.sed $(JETTY_NAME)/etc/jetty-jmx-remote.xml
 
 $(TARGET): $(JETTY_NAME)
-	mkdir -p $@
-	cd $@ ;\
-	java -jar $(CWD)/$(JETTY_NAME)/start.jar --add-to-start=server,http,deploy,jsp,jstl,logging,jmx-remote
-	printf "#!/bin/sh\ni=1\nexec java -Xmx1g -XX:MinHeapFreeRatio=10 -XX:+HeapDumpOnOutOfMemoryError -jar %s jetty.port=8\$${i}80 jetty.jmxrmiport=8\$${i}90\n" "$(CWD)/$(JETTY_NAME)/start.jar" > $@/start.sh
+	mkdir -p $@/webapps
+	install -v -m 664 start.ini $@
+	printf "#!/bin/sh\ni=1\nexec java -Xmx1g -XX:MinHeapFreeRatio=10 -XX:+HeapDumpOnOutOfMemoryError -Djetty.jmxrmiport=8\$${i}90 -jar %s jetty.port=8\$${i}80\n" "$(CWD)/$(JETTY_NAME)/start.jar" > $@/start.sh
 	chmod +x $@/start.sh
