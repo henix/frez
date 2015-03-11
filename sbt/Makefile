@@ -6,5 +6,5 @@ sbt-launch.jar:
 
 install: sbt sbt-launch.jar
 	install -vd ~/bin/
-	install -v -m 775 sbt ~/bin/
-	install -v -m 664 sbt-launch.jar ~/bin/
+	install -v -m 755 sbt ~/bin/
+	install -v -m 644 sbt-launch.jar ~/bin/
