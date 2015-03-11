@@ -1,0 +1,35 @@
+shopt -s autocd
+alias ls='ls --color=auto -h'
+alias l='ls'
+alias la='ls -A'
+alias c='cd'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ln='ln -i'
+alias grep='grep --color=auto'
+
+alias g='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gco='git checkout --'
+
+alias v='vim'
+alias ta='tmux attach'
+
+alias mp='mvn package'
+alias mt='mvn test'
+alias mpt='mvn package -Dmaven.test.skip=true'
+
+alias agi='sudo apt-get install'
+alias acs='apt-cache search'
+alias ach='apt-cache show'
+
+rel() {
+	[ ! -d 'target/universal/stage' ] && echo stage not exist! && return 1
+	name=$(pwd | tr '/' '\n' | tail -n1)
+	timestamp=$(date +%Y%m%d_%H%M%S)
+	cp -r "target/universal/stage" "/apps/$name/stage-$timestamp"
+	ln -sTv "stage-$timestamp" "/apps/$name/stage"
+}

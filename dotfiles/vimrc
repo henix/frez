@@ -1,0 +1,13 @@
+filetype plugin indent on
+syntax on
+
+set nobackup
+
+set ts=4 sw=4 noet smarttab
+set nu ruler showcmd
+set incsearch hlsearch
+set autoindent smartindent
+
+set pastetoggle=<F2>
+
+colorscheme torte
