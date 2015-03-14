@@ -22,14 +22,17 @@ alias mp='mvn package'
 alias mt='mvn test'
 alias mpt='mvn package -Dmaven.test.skip=true'
 
+alias s='sudo'
+alias sv='sudo vim'
+alias sp='sudo supervisorctl'
+
 alias agi='sudo apt-get install'
+alias agr='sudo apt-get remove'
 alias acs='apt-cache search'
 alias ach='apt-cache show'
+alias se='sudo service'
 
 rel() {
-	[ ! -d 'target/universal/stage' ] && echo stage not exist! && return 1
 	name=$(pwd | tr '/' '\n' | tail -n1)
-	timestamp=$(date +%Y%m%d_%H%M%S)
-	cp -r "target/universal/stage" "/apps/$name/stage-$timestamp"
-	ln -sTv "stage-$timestamp" "/apps/$name/stage"
+	/apps/man/deploy.sh "$name"
 }
