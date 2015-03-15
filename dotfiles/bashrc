@@ -16,6 +16,7 @@ alias gdc='git diff --cached'
 alias gco='git checkout --'
 
 alias v='vim'
+alias tmux='tmux -2'
 alias ta='tmux attach'
 
 alias mp='mvn package'
