@@ -1,4 +1,8 @@
+PS1='\[\e[1;32m\]\u\[\e[1;37m\]@\[\e[1;35m\]\h\[\e[0m\]:\[\e[1;31m\]\w\[\e[0m\]\$ '
+
 shopt -s autocd
+shopt -s checkwinsize
+
 alias ls='ls --color=auto -h'
 alias l='ls'
 alias la='ls -A'

@@ -1,0 +1,6 @@
+export PATH="$PATH:$HOME/bin"
+
+umask 022
+
+# https://unix.stackexchange.com/questions/38402/aliases-and-tmux
+case $- in *i*) . ~/.bashrc ;; esac
