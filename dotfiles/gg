@@ -1,0 +1,13 @@
+#!/bin/sh
+[ $# -lt 1 ] && echo "Usage: $0 keywords..." && exit 1
+
+i=41
+cmd="GREP_COLOR=\"0;30;$i\" grep --color=always -nr \"$1\" ."
+shift
+while [ $# -gt 0 ]; do
+	i=$((i+1))
+	cmd="$cmd | GREP_COLOR=\"0;30;$i\" grep --color=always \"$1\""
+	shift
+done
+
+eval "$cmd"
