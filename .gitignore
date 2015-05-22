@@ -3,3 +3,7 @@
 *.bz2
 *.zip
 *.jar
+*.pyc
+
+psiphon3/*.py
+psiphon3/ssh
