@@ -1,8 +1,19 @@
 #!/bin/sh
-ln -sr bashrc ~/.bash_aliases
-ln -sr bash_profile ~/.bash_profile
-ln -sr tmux.conf ~/.tmux.conf
-ln -sr vimrc ~/.vimrc
+
+if ln -r 2>&1 | grep -q "invalid option" ; then
+	link() {
+		ln -s "$PWD/$1" "$2"
+	}
+else
+	link() {
+		ln -sr "$1" "$2"
+	}
+fi
+
+link bashrc ~/.bash_aliases
+link bash_profile ~/.bash_profile
+link tmux.conf ~/.tmux.conf
+link vimrc ~/.vimrc
 
 mkdir -p ~/bin
-ln -sr gg ~/bin/
+link gg ~/bin/
