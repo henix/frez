@@ -1,4 +1,4 @@
-COLLECTD_NAME := collectd-5.4.2
+COLLECTD_NAME := collectd-5.5.0
 PKG_FILE := $(COLLECTD_NAME).tar.bz2
 TARGET ?= $(HOME)/collection3
 
