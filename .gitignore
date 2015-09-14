@@ -7,3 +7,6 @@
 
 psiphon3/*.py
 psiphon3/ssh
+
+collectd/config.sh
+collectd/*.conf
