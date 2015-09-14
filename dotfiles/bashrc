@@ -33,6 +33,7 @@ alias sp='sudo supervisorctl'
 
 alias agi='sudo apt-get install'
 alias agr='sudo apt-get remove'
+alias agp='sudo apt-get purge'
 alias acs='apt-cache search'
 alias ach='apt-cache show'
 alias se='sudo service'
