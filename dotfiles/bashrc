@@ -1,4 +1,4 @@
-PS1='\[\e[1;32m\]\u\[\e[1;37m\]@\[\e[1;35m\]\h\[\e[0m\]:\[\e[1;31m\]\w\[\e[0m\]\$ '
+#PS1='\[\e[1;32m\]\u\[\e[1;37m\]@\[\e[1;35m\]\h\[\e[0m\]:\[\e[1;31m\]\w\[\e[0m\]\$ '
 
 shopt -s autocd
 shopt -s checkwinsize
@@ -6,7 +6,6 @@ shopt -s checkwinsize
 alias ls='ls --color=auto -h'
 alias l='ls'
 alias la='ls -A'
-alias c='cd'
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -36,9 +35,9 @@ alias agr='sudo apt-get remove'
 alias agp='sudo apt-get purge'
 alias acs='apt-cache search'
 alias ach='apt-cache show'
-alias se='sudo service'
+alias se='sudo systemctl'
 
-rel() {
-	name=$(pwd | tr '/' '\n' | tail -n1)
-	/apps/man/deploy.sh "$name"
-}
+#rel() {
+#	name=$(pwd | tr '/' '\n' | tail -n1)
+#	/apps/man/deploy.sh "$name"
+#}
