@@ -22,22 +22,17 @@ alias v='vim'
 alias tmux='tmux -2'
 alias ta='tmux attach'
 
-alias mp='mvn package'
-alias mt='mvn test'
-alias mpt='mvn package -Dmaven.test.skip=true'
+#alias mp='mvn package'
+#alias mt='mvn test'
+#alias mpt='mvn package -Dmaven.test.skip=true'
 
 alias s='sudo'
 alias sv='sudo vim'
 alias sp='sudo supervisorctl'
+alias se='sudo systemctl'
 
 alias agi='sudo apt-get install'
 alias agr='sudo apt-get remove'
 alias agp='sudo apt-get purge'
 alias acs='apt-cache search'
 alias ach='apt-cache show'
-alias se='sudo systemctl'
-
-#rel() {
-#	name=$(pwd | tr '/' '\n' | tail -n1)
-#	/apps/man/deploy.sh "$name"
-#}
