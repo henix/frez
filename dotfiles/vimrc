@@ -1,12 +1,15 @@
 filetype plugin indent on
 syntax on
 
+set noswapfile
 set nobackup
 
-set ts=4 sw=4 noet smarttab
+set ts=2 sw=2 noet smarttab
 set nu ruler showcmd
 set incsearch hlsearch
 set autoindent smartindent
+
+set autoread
 
 set pastetoggle=<F2>
 
